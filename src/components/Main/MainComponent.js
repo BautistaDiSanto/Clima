@@ -5,7 +5,18 @@ import {
   WiStrongWind,
   WiThermometer,
 } from "react-icons/wi";
-import { GiCompass } from "react-icons/gi";
+import { AiOutlineCompass } from "react-icons/ai";
+
+import { keyframes } from "styled-components";
+
+const rotateperrito = keyframes`
+ 0% {transform: rotate(20deg);
+  transform: scale(1.1);
+}
+ 33% { transform: rotate(-40deg);}
+ 66% { transform: rotate(30deg);}
+ 100% { transform: rotate(0deg);}
+`;
 
 export const Caca = styled.div`
   width: 100%;
@@ -16,7 +27,7 @@ export const Caca = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 30rem;
+  width: 28rem;
   height: 30rem;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
@@ -24,7 +35,7 @@ export const Container = styled.div`
 `;
 
 export const ErrorContainer = styled.div`
-  width: 30rem;
+  width: 28rem;
   height: 30rem;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
@@ -38,12 +49,13 @@ export const Description = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   height: 25%;
   width: 100%;
 `;
 
 export const Location = styled.div`
-  height: 40%;
+  height: 50%;
   display: flex;
   align-items: center;
 `;
@@ -51,10 +63,15 @@ export const Location = styled.div`
 export const City = styled.p`
   font-size: 1.7rem;
   font-weight: bolder;
-  margin: 1rem;
+  margin-top: 0.4rem;
+`;
+
+export const Country = styled.p`
+  margin-top: 0.9rem;
 `;
 
 export const General = styled.div`
+  height: 50%;
   width: 55%;
   display: flex;
   align-items: center;
@@ -66,11 +83,10 @@ export const General = styled.div`
 export const Weather = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
 `;
 
 export const Info = styled.div`
-  height: 30%;
+  height: 38%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,9 +96,9 @@ export const Info = styled.div`
 export const Column = styled.div`
   height: 100%;
   width: 50%;
-  margin: 2rem;
   display: flex;
-  justify-content: space-evenly;
+  margin: 1.5rem;
+  justify-content: space-around;
   flex-direction: column;
   border-bottom: 1px solid gray;
 `;
@@ -90,37 +106,72 @@ export const Column = styled.div`
 export const Row = styled.div`
   display: flex;
   align-items: center;
+  justify-content: right;
 `;
 
 export const Humidity = styled(WiHumidity)`
   min-height: 1.5rem;
   min-width: 1.5rem;
+  :hover {
+    transition: 1s;
+    animation-duration: 1s;
+    animation-name: ${rotateperrito};
+  }
 `;
 
 export const Barometer = styled(WiBarometer)`
   min-height: 1.5rem;
   min-width: 1.5rem;
+  :hover {
+    transition: 1s;
+    animation-duration: 1s;
+    animation-name: ${rotateperrito};
+  }
 `;
 
 export const Windy = styled(WiStrongWind)`
   min-height: 1.5rem;
   min-width: 1.5rem;
+  :hover {
+    transition: 1s;
+    animation-duration: 1s;
+    animation-name: ${rotateperrito};
+  }
 `;
 
 export const Thermometer = styled(WiThermometer)`
   min-height: 1.5rem;
   min-width: 1.5rem;
+  :hover {
+    transition: 1s;
+    animation-duration: 1s;
+    animation-name: ${rotateperrito};
+  }
 `;
 
 export const Wind = styled.div`
-  height: 45%;
+  height: 37%;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 `;
 
-export const CompassIcon = styled(GiCompass)`
+export const WindColumn = styled.div`
+  height: 100%;
+  width: 50%;
+  display: flex;
+  margin: 1.5rem;
+  justify-content: space-evenly;
+  flex-direction: column;
+`;
+
+export const CompassIcon = styled(AiOutlineCompass)`
   min-height: 1.5rem;
   min-width: 1.5rem;
+  :hover {
+    transition: 1s;
+    animation-duration: 1s;
+    animation-name: ${rotateperrito};
+  }
 `;

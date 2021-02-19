@@ -8,9 +8,7 @@ import {
   Weast,
 } from "./compascomponent";
 
-export const Compass = (data, status) => {
-  console.log("compas");
-  console.log(data);
+export const Compass = (data) => {
   if (data) {
     return (
       <Container>

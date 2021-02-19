@@ -14,8 +14,10 @@ import {
   Barometer,
   Thermometer,
   Wind,
+  WindColumn,
   Windy,
   CompassIcon,
+  Country,
 } from "./MainComponent";
 import { Compass } from "../compas/compas";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -39,14 +41,13 @@ export const Main = ({ data, status, search }) => {
           </ErrorContainer>
         </Caca>
       );
-    console.log(data);
     return (
       <Caca>
         <Container>
           <Description>
             <Location>
-              <City>{data.name},</City>
-              <p>{data.sys.country}</p>
+              <City>{data.name}</City>
+              <Country>,&nbsp;{data.sys.country}</Country>
             </Location>
             <General>
               <img
@@ -88,20 +89,27 @@ export const Main = ({ data, status, search }) => {
             </Column>
           </Info>
           <Wind>
-            <Column>
-              <h3 style={{ marginTop: "-3rem" }}>viento</h3>
-              <Row style={{ marginTop: "-3rem" }}>
+            <WindColumn>
+              <h3
+                style={{
+                  marginLeft: "1.2rem",
+                  marginTop: "-1.2rem",
+                }}
+              >
+                Viento
+              </h3>
+              <Row>
                 <CompassIcon />
-                <p> dirección:</p>
+                <p>&nbsp;dirección:</p>
               </Row>
-              <Row style={{ marginTop: "-3rem" }}>
+              <Row>
                 <Windy />
-                <p> velocidad: {data.wind.speed}km</p>
+                <p>&nbsp;velocidad: {data.wind.speed}km</p>
               </Row>
-            </Column>
-            <Column>
+            </WindColumn>
+            <WindColumn style={{ alignItems: "center" }}>
               <Compass data={data} />
-            </Column>
+            </WindColumn>
           </Wind>
         </Container>
       </Caca>
